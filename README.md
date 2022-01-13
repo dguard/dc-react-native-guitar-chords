@@ -16,7 +16,7 @@ Guitar chords for famous songs - includes tabs, sounds and lyrics
 
 ## How this looks
   <p align="left">
-    <img width=400 src="/captures/guitar-chords__menu.jpg" alt="screenshot" />
+    <img width=400 src="/captures/guitar-chords__main-menu.jpg" alt="screenshot" />
   </p>
   <p align="left">
       <img width=400 src="/captures/guitar-chords__sofia.jpg" alt="screenshot" />
