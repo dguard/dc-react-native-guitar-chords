@@ -1,24 +1,22 @@
 import React, {useRef, useState} from "react";
 import styles from "app/screens/Login/styles";
 
-
-import {Dimensions, View, ImageBackground, Text, TouchableOpacity, Image, AppState} from 'react-native';
+import { Dimensions, View, ImageBackground, Text, TouchableOpacity, Image, AppState } from 'react-native';
+import { TextInput } from 'react-native-paper';
+import DropDown from "react-native-paper-dropdown";
+import NavigationService from "app/navigation/NavigationService";
+import { useSelector } from "react-redux";
+import { ILoginState } from "app/models/reducers/login";
+import FullScreenAndroid from "react-native-fullscreen-chz";
 
 
 let dimensions = Dimensions.get('window');
 console.log(dimensions);
 
-
-import { TextInput } from 'react-native-paper';
-import DropDown from "react-native-paper-dropdown";
-import NavigationService from "app/navigation/NavigationService";
-import {useSelector} from "react-redux";
-import {ILoginState} from "app/models/reducers/login";
-import FullScreenAndroid from "react-native-fullscreen-chz";
 var Sound = require('react-native-sound');
 Sound.setCategory('Playback');
 
-const componentDidMount = (cb) => {
+const componentDidMount = (cb: any) => {
     React.useEffect(cb)
 };
 
