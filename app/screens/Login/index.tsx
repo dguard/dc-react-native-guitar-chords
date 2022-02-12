@@ -1,12 +1,14 @@
 import React from 'react'
 import { View } from 'react-native'
+import { ILoginState } from 'models/reducers/login'
 import { Button, Text } from 'react-native-paper'
 import { useDispatch, useSelector } from 'react-redux'
 
-import * as loginActions from 'store/actions/loginActions'
-import styles from './styles'
-import { ILoginState } from 'models/reducers/login'
 import NavigationService from 'navigation/NavigationService'
+
+import * as loginActions from 'store/actions/loginActions'
+
+import styles from './styles'
 
 interface IState {
   loginReducer: ILoginState
@@ -24,7 +26,7 @@ const Login: React.FC = () => {
         <Button icon="login" mode="outlined" onPress={onLogin}>
           Login
         </Button>
-        <Button mode="text" style={styles.forgot} labelStyle={styles.labelStyle} onPress={onForgot}>
+        <Button labelStyle={styles.labelStyle} mode="text" style={styles.forgot} onPress={onForgot}>
           Forgot Password
         </Button>
       </View>

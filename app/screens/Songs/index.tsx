@@ -9,8 +9,6 @@ import { bgImage } from 'assets/images'
 
 import NavigationService from 'navigation/NavigationService'
 
-import styles from 'screens/Login/styles'
-
 const dimensions = Dimensions.get('window')
 
 function Songs() {
@@ -21,7 +19,12 @@ function Songs() {
   }
 
   return (
-    <Column style={styles.container}>
+    <Column
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <ImageBackground height={'100%' as any} source={bgImage} width={'100%' as any}>
         <Row px={20} py={20} justifyCenter>
           <Column

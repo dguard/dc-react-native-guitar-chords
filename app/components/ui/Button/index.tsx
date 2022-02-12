@@ -20,7 +20,7 @@ type ButtonProps = BackgroundColorProps &
   }
 
 const borderTopCss: styleFn = ({ borderTop }: ButtonProps) =>
-  borderTop &
+  borderTop &&
   css`
     border-top-width: 1px;
     border-top-color: #fff;

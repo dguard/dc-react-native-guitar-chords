@@ -5,6 +5,7 @@ import { Column, Row } from 'components/ui/Element'
 import { Image } from 'components/ui/Image'
 import { ImageBackground } from 'components/ui/ImageBackground'
 import { Text } from 'components/ui/Text'
+import Sound from 'react-native-sound'
 
 import {
   bgImage,
@@ -23,8 +24,6 @@ import {
 
 import NavigationService from 'navigation/NavigationService'
 
-import styles from 'screens/Login/styles'
-
 import BabySheets from './melodies/baby'
 import BabyChords from './melodies/baby-chords'
 import ICantHateYouAnymoreSheets from './melodies/icanthateyouanymore'
@@ -37,8 +36,6 @@ import SofiaSheets from './melodies/sofia'
 import SofiaChords from './melodies/sofia-chords'
 
 const dimensions = Dimensions.get('window')
-
-const Sound = require('react-native-sound')
 
 Sound.setCategory('Playback')
 
@@ -145,7 +142,12 @@ function Melody({ route }: Props) {
   }
 
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <ImageBackground
         height={'100%' as any}
         resizeMode="cover"
@@ -223,7 +225,7 @@ function Melody({ route }: Props) {
                     {Sheets[key].map((line: any, index: any) => {
                       if (line.length === 4) {
                         return (
-                          <View key={`line_${line[0]}_${index}`}>
+                          <View key={`line_${JSON.stringify(line)}`}>
                             <Text fontSize={12}>{line[0]}</Text>
                             <Text fontSize={12}>{line[1]}</Text>
                             <Text fontSize={10} bold fullWidth>
@@ -237,7 +239,7 @@ function Melody({ route }: Props) {
                       }
                       if (line.length === 3) {
                         return (
-                          <View key={`line_${index}`}>
+                          <View key={`line_${JSON.stringify(line)}`}>
                             <Text fontSize={12}>{line[0]}</Text>
                             <Text fontSize={10} bold fullWidth>
                               {line[1]}
@@ -250,7 +252,7 @@ function Melody({ route }: Props) {
                       }
                       if (line.length === 2) {
                         return (
-                          <View key={`line_${index}`}>
+                          <View key={`line_${JSON.stringify(line)}`}>
                             <Text fontSize={10} bold fullWidth>
                               {line[0]}
                             </Text>
