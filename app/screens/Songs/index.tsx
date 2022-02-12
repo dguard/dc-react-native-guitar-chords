@@ -28,7 +28,7 @@ function Songs() {
       <ImageBackground height={'100%' as any} source={bgImage} width={'100%' as any}>
         <Row px={20} py={20} justifyCenter>
           <Column
-            backgroundColor="rgba(135, 206, 235, 0.7)"
+            bg="rgba(135, 206, 235, 0.7)"
             height={dimensions.height - 40}
             mr={10}
             width={'19%' as any}>
@@ -36,7 +36,7 @@ function Songs() {
               &lt;
             </Text>
           </Column>
-          <Column backgroundColor="rgba(255,255,255,0.8)" width={'60%' as any}>
+          <Column bg="rgba(255,255,255,0.8)" width={'60%' as any}>
             <Row px={20} py={20}>
               <Text color="#000" bold>
                 Songs
@@ -97,7 +97,7 @@ function Songs() {
             </Button>
           </Column>
 
-          <Column backgroundColor="rgba(135, 206, 235, 0.7)" ml={19} width={'19%' as any}>
+          <Column bg="rgba(135, 206, 235, 0.7)" ml={19} width={'19%' as any}>
             <Text color="#fff" fontSize={42} ml={70} mt={(dimensions.height - 40) / 2 - 40}>
               &gt;
             </Text>

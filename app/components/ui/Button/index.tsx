@@ -1,8 +1,8 @@
 import { TouchableOpacity } from 'react-native'
 import styled, { css } from 'styled-components/native'
 import {
-  backgroundColor,
-  BackgroundColorProps,
+  color,
+  ColorProps,
   layout,
   LayoutProps,
   margin,
@@ -12,7 +12,7 @@ import {
   styleFn,
 } from 'styled-system'
 
-type ButtonProps = BackgroundColorProps &
+type ButtonProps = ColorProps &
   LayoutProps &
   PaddingProps &
   MarginProps & {
@@ -27,7 +27,7 @@ const borderTopCss: styleFn = ({ borderTop }: ButtonProps) =>
   `
 
 export const Button = styled(TouchableOpacity)<ButtonProps>`
-  ${backgroundColor}
+  ${color}
   ${layout}
   ${margin}
   ${padding}

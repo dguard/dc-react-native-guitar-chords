@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components/native'
 import { View } from 'react-native'
+import styled, { css } from 'styled-components/native'
 import {
-  backgroundColor,
-  BackgroundColorProps,
+  color,
+  ColorProps,
   layout,
   LayoutProps,
   margin,
@@ -15,7 +15,7 @@ import {
 type ElementProps = MarginProps &
   PaddingProps &
   LayoutProps &
-  BackgroundColorProps & {
+  ColorProps & {
     justifyCenter?: boolean
   }
 const justifyCenterCss: styleFn = ({ justifyCenter }: ElementProps) =>
@@ -28,7 +28,7 @@ const Element = styled(View)`
   ${padding}
   ${margin}
   ${layout}
-  ${backgroundColor}
+  ${color}
   ${justifyCenterCss}
 `
 

@@ -155,11 +155,7 @@ function Melody({ route }: Props) {
         width={'100%' as any}>
         <Row px={20} py={20} justifyCenter>
           <Column height={dimensions.height - 90} width={'43%' as any}>
-            <Column
-              backgroundColor="rgba(255, 255, 255, 0.8)"
-              height={dimensions.height - 90}
-              mb={20}
-              mr={40}>
+            <Column bg="rgba(255, 255, 255, 0.8)" height={dimensions.height - 90} mb={20} mr={40}>
               <Row ml={-20} px={20} py={20}>
                 <Text color="#000" alignCenter bold fullWidth>
                   Chords 1/1
@@ -188,16 +184,11 @@ function Melody({ route }: Props) {
                 ))}
               </Row>
             </Column>
-            <Button
-              backgroundColor="rgba(255, 255, 255, 0.8)"
-              px={10}
-              py={10}
-              width={60}
-              onPress={onClickMenu}>
+            <Button bg="rgba(255, 255, 255, 0.8)" px={10} py={10} width={60} onPress={onClickMenu}>
               <Text>Menu</Text>
             </Button>
           </Column>
-          <Column backgroundColor="rgba(255,255,255,0.8)" width={'52%' as any}>
+          <Column bg="rgba(255,255,255,0.8)" width={'52%' as any}>
             <Column ml={-20} pb={2} pt={20}>
               <Text color="#000" alignCenter bold fullWidth>
                 {melodyName.slice(0, 1).toUpperCase() + melodyName.slice(1)} {selectedSheet}/
