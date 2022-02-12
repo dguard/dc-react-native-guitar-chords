@@ -1,79 +1,108 @@
-import React, {useState} from "react";
-import styles from "app/screens/Login/styles";
+import React from 'react'
+import { Dimensions } from 'react-native'
+import { Button } from 'components/ui/Button'
+import { Column, Row } from 'components/ui/Element'
+import { ImageBackground } from 'components/ui/ImageBackground'
+import { Text } from 'components/ui/Text'
 
+import { bgImage } from 'assets/images'
 
-import {Dimensions, View, ImageBackground, Text, TouchableOpacity} from 'react-native';
+import NavigationService from 'navigation/NavigationService'
 
+import styles from 'screens/Login/styles'
 
-let dimensions = Dimensions.get('window');
-console.log(dimensions);
+const dimensions = Dimensions.get('window')
 
+function Songs() {
+  const onClickSong = (melodyName: any) => {
+    NavigationService.navigate('Melody', {
+      melodyName,
+    })
+  }
 
-import { TextInput } from 'react-native-paper';
-import DropDown from "react-native-paper-dropdown";
-import NavigationService from 'app/navigation/NavigationService';
+  return (
+    <Column style={styles.container}>
+      <ImageBackground height={'100%' as any} source={bgImage} width={'100%' as any}>
+        <Row px={20} py={20} justifyCenter>
+          <Column
+            backgroundColor="rgba(135, 206, 235, 0.7)"
+            height={dimensions.height - 40}
+            mr={10}
+            width={'19%' as any}>
+            <Text color="#fff" fontSize={42} ml={70} mt={(dimensions.height - 40) / 2 - 40}>
+              &lt;
+            </Text>
+          </Column>
+          <Column backgroundColor="rgba(255,255,255,0.8)" width={'60%' as any}>
+            <Row px={20} py={20}>
+              <Text color="#000" bold>
+                Songs
+              </Text>
+            </Row>
 
+            <Button
+              px={20}
+              py={20}
+              borderTop
+              onPress={() => {
+                onClickSong('retine')
+              }}>
+              <Text color="#000"> Amir - Rétine</Text>
+            </Button>
+            <Button
+              px={20}
+              py={20}
+              borderTop
+              onPress={() => {
+                onClickSong('baby')
+              }}>
+              <Text color="#000">
+                {' '}
+                Clean Bandit feat. Marina and The Diamonds & Luis Fonsi - Baby
+              </Text>
+            </Button>
+            <Button
+              px={20}
+              py={20}
+              borderTop
+              onPress={() => {
+                onClickSong('obsession')
+              }}>
+              <Text color="#000">
+                {' '}
+                Consoul Trainin feat. S. Aderinto, DuoViolins, S. Ader - Obsession
+              </Text>
+            </Button>
+            <Button
+              px={20}
+              py={20}
+              borderTop
+              onPress={() => {
+                onClickSong('icanthateyouanymore')
+              }}>
+              <Text color="#000"> Nick Lachey - I Cant Hate You Anymore</Text>
+            </Button>
 
-const componentDidMount = (cb) => {
-    React.useEffect(cb)
-};
+            <Button
+              px={20}
+              py={20}
+              borderTop
+              onPress={() => {
+                onClickSong('sofia')
+              }}>
+              <Text color="#000"> Alvaro Soler - Sofia</Text>
+            </Button>
+          </Column>
 
-const http_get = (url: any): Promise<any> => {
-    return new Promise((resolve, reject) => {
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = (e) => {
-            if (request.readyState !== 4) {
-                return;
-            }
-
-            if (request.status === 200) {
-                // console.log('success', request.responseText);
-                return resolve(request);
-            } else {
-                console.warn('error');
-                return reject(request);
-            }
-        };
-
-        request.open('GET', url);
-        request.send();
-    });
+          <Column backgroundColor="rgba(135, 206, 235, 0.7)" ml={19} width={'19%' as any}>
+            <Text color="#fff" fontSize={42} ml={70} mt={(dimensions.height - 40) / 2 - 40}>
+              &gt;
+            </Text>
+          </Column>
+        </Row>
+      </ImageBackground>
+    </Column>
+  )
 }
 
-
-const Songs: React.FC = () => {
-
-    const onClickSong = (melodyName: any) => {
-        NavigationService.navigate('Melody', {
-            melodyName: melodyName
-        });
-    };
-
-
-    return (
-        <View style={styles.container}>
-            <ImageBackground source={require("../../assets/bg.png")} resizeMode="cover" style={{width: '100%', height: '100%'}}>
-                <View style={{padding: 20, flexDirection: 'row', justifyContent: 'center'}}>
-                    <View style={{width: '19%', height: dimensions.height - 40, backgroundColor: 'rgba(135, 206, 235, 0.7)', marginRight: 10}}><Text style={{color: '#fff', fontSize: 42, marginTop: (dimensions.height-40)/2 - 40, marginLeft: 70}}>&lt;</Text></View>
-                    <View style={{width: '60%', backgroundColor: 'rgba(255,255,255,0.8)'}}>
-                        <View style={{padding: 20}}><Text style={{color: '#000', fontWeight: 'bold'}}>Songs</Text></View>
-
-                        <TouchableOpacity onPress={() => {onClickSong("retine")}} style={{padding: 20, borderTopWidth: 1, borderTopColor: '#fff'}}><Text style={{color: '#000'}}> Amir - Rétine</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={() => {onClickSong("baby")}} style={{padding: 20, borderTopWidth: 1, borderTopColor: '#fff'}}><Text style={{color: '#000'}}> Clean Bandit feat. Marina and The Diamonds & Luis Fonsi - Baby</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={() => {onClickSong("obsession")}} style={{padding: 20, borderTopWidth: 1, borderTopColor: '#fff'}}><Text style={{color: '#000'}}> Consoul Trainin feat. S. Aderinto, DuoViolins, S. Ader - Obsession</Text></TouchableOpacity>
-                        <TouchableOpacity onPress={() => {onClickSong("icanthateyouanymore")}} style={{padding: 20, borderTopWidth: 1, borderTopColor: '#fff'}}><Text style={{color: '#000'}}> Nick Lachey - I Cant Hate You Anymore</Text></TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => {onClickSong("sofia")}} style={{padding: 20, borderTopWidth: 1, borderTopColor: '#fff'}}><Text style={{color: '#000'}}> Alvaro Soler - Sofia</Text></TouchableOpacity>
-
-                    </View>
-
-                    <View style={{width: '19%', marginLeft: 10, backgroundColor: 'rgba(135, 206, 235, 0.7)'}}><Text style={{color: '#fff', fontSize: 42, marginTop: (dimensions.height-40)/2 - 40, marginLeft: 70}}>&gt;</Text></View>
-
-                </View>
-
-            </ImageBackground>
-        </View>
-    );
-};
-
-export default Songs;
+export default Songs

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
   labelStyle: {
     fontSize: 12,
   },
-});
+})
 
-export default styles;
+export default styles

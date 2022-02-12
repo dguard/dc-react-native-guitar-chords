@@ -1,0 +1,57 @@
+export default {
+  '1': [['[Intro]', 'Am G F E', '']],
+  '2': [
+    ['[Verse 1]', 'Am', '   I got a confession'],
+    ['G', '   I got an obsession'],
+    ['F', '   Baby it is you'],
+    ['E', '   You will always be my boo'],
+    [
+      'Am             G                             F',
+      "   You are the most beautiful girl I've ever seen",
+    ],
+    ['E                                    Am', "   For you my babe I'll give my everything"],
+    ['         G                      F', 'You will always be always be my queen'],
+    ['         E                              Am', "And I'll love girl I'll love you endlessly"],
+  ],
+  '3': [
+    ['[Pre-Chorus 1]', '   Am       G', '   My baby, my baby'],
+    ['   F', '   My lady, my lady'],
+    ['   E            Am', '   You are my obsession yeah'],
+    ['   Am         G', '   My lady, my lady'],
+    ['   F', '   My baby, my baby'],
+    ['[Chorus]', '   Dm                  Am    C F Am C F', '   You are my obsession yeah'],
+    ['   D          Am     C F D Am C F', '   My obsession yeah'],
+    ['   D           Am', '   My obsession yeah'],
+  ],
+  '4': [
+    ['[Interlude]', 'Am G F E', ''],
+    ['', 'Am G F E', ''],
+  ],
+  '5': [
+    ['[Verse 2]', 'A', '  I got a confession'],
+    ['G', '  I got an obsession'],
+    ['F Am', '  Baby it is you'],
+    ['E', '  You will always be my boo'],
+    [
+      'A  D        G                               Dm  F',
+      "  You are the most beautiful girl I've ever seen",
+    ],
+    ['E                                    Am', "  For you my babe I'll give my everything"],
+    ['G                Dm                    F', '  You will always be always be my queen'],
+    ['D', "  And I'll love girl I'll love you endlessly"],
+  ],
+  '6': [
+    ['[Pre-Chorus 2]', '           G', '  My baby, my baby'],
+    ['           F', '  My lady, my lady'],
+    ['         Dm       E               Am', '  You are my obsession yeah'],
+    ['           G', '  My lady, my lady'],
+    ['           F', '  My baby, my baby'],
+    ['         E', '  You are my obsession yeah'],
+  ],
+  '7': [['[Inter 2] (Light Strum)', 'Am G F E', '']],
+  '8': [
+    ['[Final Chorus]', '              A    C F Am C F', '  My obsession yeah'],
+    ['D             Am   C F Am G F', '  My obsession yeah'],
+    ['A   (fade out)', '  My obsession yeah'],
+  ],
+}

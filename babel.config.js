@@ -6,16 +6,15 @@ module.exports = {
     },
   },
   plugins: [
+    'styled-components',
     [
-      require.resolve('babel-plugin-module-resolver'),
+      'module-resolver',
       {
+        root: ['./app'],
         cwd: 'babelrc',
         extensions: ['.ts', '.tsx', '.js', '.ios.js', '.android.js'],
-        alias: {
-          app: './app',
-        },
       },
     ],
     'jest-hoist',
   ],
-};
+}
