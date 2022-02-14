@@ -6,8 +6,6 @@ import { DefaultTheme as PaperDefaultTheme } from 'react-native-paper'
 import colors from 'themes/main/colors'
 import palette from 'themes/main/palette'
 
-console.log(colors)
-
 export default {
   ...PaperDefaultTheme,
   ...NavigationDefaultTheme,
