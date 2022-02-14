@@ -142,22 +142,13 @@ function Melody({ route }: Props) {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <ImageBackground
-        height={'100%' as any}
-        resizeMode="cover"
-        source={bgImage}
-        width={'100%' as any}>
+    <Column alignCenter justifyCenter stretch>
+      <ImageBackground resizeMode="cover" source={bgImage} fullHeight fullWidth>
         <Row px={20} py={20} justifyCenter>
           <Column height={dimensions.height - 90} width={'43%' as any}>
-            <Column bg="rgba(255, 255, 255, 0.8)" height={dimensions.height - 90} mb={20} mr={40}>
+            <Column bg="screen.melody.chords.bg" height={dimensions.height - 90} mb={20} mr={40}>
               <Row ml={-20} px={20} py={20}>
-                <Text color="#000" alignCenter bold fullWidth>
+                <Text color="screen.melody.chords.color" alignCenter bold fullWidth>
                   Chords 1/1
                 </Text>
               </Row>
@@ -184,13 +175,18 @@ function Melody({ route }: Props) {
                 ))}
               </Row>
             </Column>
-            <Button bg="rgba(255, 255, 255, 0.8)" px={10} py={10} width={60} onPress={onClickMenu}>
+            <Button
+              bg="screen.melody.menuButton.bg"
+              px={10}
+              py={10}
+              width={60}
+              onPress={onClickMenu}>
               <Text>Menu</Text>
             </Button>
           </Column>
-          <Column bg="rgba(255,255,255,0.8)" width={'52%' as any}>
+          <Column bg="screen.melody.lyrics.title.bg" width={'52%' as any}>
             <Column ml={-20} pb={2} pt={20}>
-              <Text color="#000" alignCenter bold fullWidth>
+              <Text color="screen.melody.lyrics.title.color" alignCenter bold fullWidth>
                 {melodyName.slice(0, 1).toUpperCase() + melodyName.slice(1)} {selectedSheet}/
                 {Object.keys(Sheets).length}
               </Text>
@@ -202,7 +198,7 @@ function Melody({ route }: Props) {
                 width={'14%' as any}
                 onPress={onClickPrevSheet}>
                 <Text
-                  color="#fff"
+                  color="screen.melody.lyrics.leftArrowButton.color"
                   fontSize={28}
                   ml={30}
                   mt={(dimensions.height - 110 - 40) / 2 - 20}>
@@ -260,7 +256,7 @@ function Melody({ route }: Props) {
 
               <Button ml={-2} width={'14%' as any} onPress={onClickNextSheet}>
                 <Text
-                  color="#fff"
+                  color="screen.melody.lyrics.rightArrowButton.color"
                   fontSize={28}
                   ml={30}
                   mt={(dimensions.height - 110 - 40) / 2 - 20}>
@@ -271,7 +267,7 @@ function Melody({ route }: Props) {
           </Column>
         </Row>
       </ImageBackground>
-    </View>
+    </Column>
   )
 }
 

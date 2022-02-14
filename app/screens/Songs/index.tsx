@@ -19,26 +19,25 @@ function Songs() {
   }
 
   return (
-    <Column
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <ImageBackground height={'100%' as any} source={bgImage} width={'100%' as any}>
+    <Column alignCenter justifyCenter stretch>
+      <ImageBackground source={bgImage} fullHeight fullWidth>
         <Row px={20} py={20} justifyCenter>
           <Column
-            bg="rgba(135, 206, 235, 0.7)"
+            bg="screen.songs.columnLeftArrow.bg"
             height={dimensions.height - 40}
             mr={10}
             width={'19%' as any}>
-            <Text color="#fff" fontSize={42} ml={70} mt={(dimensions.height - 40) / 2 - 40}>
+            <Text
+              color="screen.songs.columnLeftArrow.color"
+              fontSize={42}
+              ml={70}
+              mt={(dimensions.height - 40) / 2 - 40}>
               &lt;
             </Text>
           </Column>
-          <Column bg="rgba(255,255,255,0.8)" width={'60%' as any}>
+          <Column bg="screen.songs.songsTitle.bg" width={'60%' as any}>
             <Row px={20} py={20}>
-              <Text color="#000" bold>
+              <Text color="screen.songs.songsTitle.color" bold>
                 Songs
               </Text>
             </Row>
@@ -50,7 +49,7 @@ function Songs() {
               onPress={() => {
                 onClickSong('retine')
               }}>
-              <Text color="#000"> Amir - Rétine</Text>
+              <Text color="screen.songs.buttonSong.color"> Amir - Rétine</Text>
             </Button>
             <Button
               px={20}
@@ -59,7 +58,7 @@ function Songs() {
               onPress={() => {
                 onClickSong('baby')
               }}>
-              <Text color="#000">
+              <Text color="screen.songs.buttonSong.color">
                 {' '}
                 Clean Bandit feat. Marina and The Diamonds & Luis Fonsi - Baby
               </Text>
@@ -71,7 +70,7 @@ function Songs() {
               onPress={() => {
                 onClickSong('obsession')
               }}>
-              <Text color="#000">
+              <Text color="screen.songs.buttonSong.color">
                 {' '}
                 Consoul Trainin feat. S. Aderinto, DuoViolins, S. Ader - Obsession
               </Text>
@@ -83,7 +82,10 @@ function Songs() {
               onPress={() => {
                 onClickSong('icanthateyouanymore')
               }}>
-              <Text color="#000"> Nick Lachey - I Cant Hate You Anymore</Text>
+              <Text color="screen.songs.buttonSong.color">
+                {' '}
+                Nick Lachey - I Cant Hate You Anymore
+              </Text>
             </Button>
 
             <Button
@@ -93,12 +95,16 @@ function Songs() {
               onPress={() => {
                 onClickSong('sofia')
               }}>
-              <Text color="#000"> Alvaro Soler - Sofia</Text>
+              <Text color="screen.songs.buttonSong.color"> Alvaro Soler - Sofia</Text>
             </Button>
           </Column>
 
-          <Column bg="rgba(135, 206, 235, 0.7)" ml={19} width={'19%' as any}>
-            <Text color="#fff" fontSize={42} ml={70} mt={(dimensions.height - 40) / 2 - 40}>
+          <Column bg="screen.songs.columnRightArrow.bg" ml={19} width={'19%' as any}>
+            <Text
+              color="screen.songs.columnLeftArrow.color"
+              fontSize={42}
+              ml={70}
+              mt={(dimensions.height - 40) / 2 - 40}>
               &gt;
             </Text>
           </Column>

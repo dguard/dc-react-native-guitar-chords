@@ -17,11 +17,24 @@ type ElementProps = MarginProps &
   LayoutProps &
   ColorProps & {
     justifyCenter?: boolean
+    alignCenter?: boolean
+    stretch?: boolean
   }
 const justifyCenterCss: styleFn = ({ justifyCenter }: ElementProps) =>
   justifyCenter &&
   css`
     justify-content: center;
+  `
+const alignCenterCss: styleFn = ({ alignCenter }: ElementProps) =>
+  alignCenter &&
+  css`
+    align-items: center;
+  `
+
+const stretchCss: styleFn = ({ stretch }: ElementProps) =>
+  stretch &&
+  css`
+    flex: 1;
   `
 
 const Element = styled(View)`
@@ -30,6 +43,8 @@ const Element = styled(View)`
   ${layout}
   ${color}
   ${justifyCenterCss}
+  ${alignCenterCss}
+  ${stretchCss}
 `
 
 export const Row = styled(Element)<ElementProps>`
